@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include<stdlib.h>
+struct Node
+{
+int data;
+struct Node *next; 
+};
+
+
+ struct Node* create(struct Node *hptr, int x)
+  {
+   struct Node *nptr,*ptr;
+   nptr=(struct Node*)malloc(sizeof(struct Node));
+   nptr->data=x;
+   nptr->next=NULL;
+   if(hptr==NULL)
+   {
+    hptr=nptr;
+   }
+   else{
+    ptr=hptr;
+    while(ptr->next!=NULL)
+    {
+     ptr=ptr->next;
+    }
+    ptr->next=nptr;
+   }
+   return hptr;
+  }
+
+ void disp(struct Node *hptr)
+ {
+  struct Node *dptr=hptr;
+  printf("\nElements are: ");
+  while(dptr!=NULL)
+  {
+   printf("%d ",dptr->data);
+   dptr=dptr->next;
+  }
+  } 
+  
+  
+  
+int main( ) 
+{
+ struct Node *hptr=NULL;
+ hptr=create(hptr,70);
+ hptr=create(hptr,80);
+ hptr=create(hptr,90);
+ hptr=create(hptr,10);
+ hptr=create(hptr,20);
+ hptr=create(hptr,30);
+   disp(hptr);
+     
+           
+return 0;
+} 
+
+       

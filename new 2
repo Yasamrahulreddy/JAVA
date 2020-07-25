@@ -1,0 +1,22 @@
+import java.util.*;
+public class Source {
+
+   public static void main(String[] args) {
+
+      int X,Y,A,B,heartRate;
+      Scanner input= new Scanner(System.in);
+      X=input.nextInt();
+      Y=input.nextInt();
+      A=input.nextInt();
+      B=input.nextInt();
+      heartRate=input.nextInt();
+      int sum=X+Y;
+     if (sum>30){
+      System.out.println("The statement said by the person is true");
+      } 
+      else
+      {
+           System.out.println("The statement said by the person is false");
+      }
+   }
+}
